@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Generator</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="home">
+    <nav>
+        <div class="navbar">
+            <i class='bx bx-menu'></i>
+            <div class="logo"><a href="../index.html">Letter Generator</a></div>
+            <div class="nav-links">
+                <div class="sidebar-logo">
+                    <span class="logo-name"><a href="../index.html">Letter Generator</a></span>
+                    <i class="bx bx-x"></i>
+                </div>
+                <ul class="links">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li>
+                        <a href="#request">REQUEST</a>
+                        <i class='bx bxs-chevron-down arrow'></i>
+                        <ul class="submenu">
+                            <li><a href="#">Recommendation Letter</a></li>
+                            <li><a href="#">Cover Letter</a></li>
+                            <li><a href="#">Career Advice</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="search-box">
+                <i class="bx bx-search"></i>
+                <div class="input-box">
+                    <input type="text" placeholder="Search for a letter..." class="search-file">
+                </div>
+            </div>
+        </div>
+    </nav>
+   <div class="form-box">
+    <form action="/generate_letter" method="POST">
+            <div>
+                <label for="template">Letter For:</label>
+                <select name="template" required>
+                    <option disabled selected>Writing a letter for ... student.</option>
+                    <option value="firstClassExcellent">First Class (excellent)</option>
+                    <option value="firstClassOrdinary">First Class (ordinary)</option>
+                    <option value="upperExcellent">Second Class Upper (excellent)</option>
+                    <option value="upperOrdinary">Second Class Upper (ordinary)</option>
+                    <option value="upperForSupport">Second Class Upper (for support)</option>
+                    <option value="lower">Second Class Lower (ordinary)</option>
+                    <option value="lowerWeak">Second Class Lower (weak)</option>
+                    <option value="undergraduate">Undergraduate</option>
+                </select>
+            </div>
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" placeholder="Enter applicant's first name" required>
+            </div>
+
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" placeholder="Enter applicant's middle name" required>
+            </div>
+            <div>
+                <label for="fullName">Full Name:</label>
+                <input type="text" name="fullName" placeholder="Enter applicant's full name" required>
+            </div>
+            <div>
+                <label for="gender">Gender:</label>
+                <select name="gender" required>
+                    <option disabled selected>Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div>
+                <label for="rank">Student Rank:</label>
+                <input type="number" name="rank" placeholder="In what percentile would you rank the student?" required>
+            </div>
+            <div>
+                <label for="years">Number of Years</label>
+                <input type="text" name="years" placeholder="How Many Years Have You Known the Student?" required>
+            </div>
+            <div>
+                <label for="gradYear">Year Graduated</label>
+                <input type="number" name="gradYear" placeholder="Which year did the student graduate?" required>
+            </div>
+            <div>
+                <label for="progStudied">Programme Studied</label>
+                <input type="text" name="progStudied" placeholder="Which programme did the student study?">
+            </div>
+            <div>
+                <label for="progApplying">Programme/Scholarship Applying</label>
+                <input type="text" name="progApplying" placeholder="What programme or Scholarship is the student applying to?" required>
+            </div>
+            <div>
+                <label for="schoolApplying">School Applying</label>
+                <input type="text" name="schoolApplying" placeholder="Which school is the student applying to?" required>
+            </div>
+            <div>
+                <textarea type="text" name="comments" placeholder="Add any additional comments to the letter"></textarea>
+            </div>
+            <div>
+                <textarea type="text" name="receiversAddress" placeholder="What is the address of the receiver?"></textarea>
+            </div>
+            <button type="submit" class="btn-group btn-generate">Generate Letter</button>
+        </form>
+    </div>
+</body>
+</html>

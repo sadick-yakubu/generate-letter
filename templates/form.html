@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <i class='bx bx-menu'></i>
+            <div class="logo"><a href="../index.html">Letter Generator</a></div>
+            <div class="nav-links">
+                <div class="sidebar-logo">
+                    <span class="logo-name"><a href="../index.html">Letter Generator</a></span>
+                    <i class="bx bx-x"></i>
+                </div>
+                <ul class="links">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li>
+                        <a href="#request">REQUEST</a>
+                        <i class='bx bxs-chevron-down arrow'></i>
+                        <ul class="submenu">
+                            <li><a href="#">Recommendation Letter</a></li>
+                            <li><a href="#">Cover Letter</a></li>
+                            <li><a href="#">Career Advice</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="search-box">
+                <i class="bx bx-search"></i>
+                <div class="input-box">
+                    <input type="text" placeholder="Search for a letter..." class="search-file">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="form-box">
+            <div class="progress">
+                <div>
+                    <span class="form-title">Generate Letter
+                    </span>
+                </div>
+                <ul class="progress-steps">
+                    <li class="step active">
+                        <span>1</span>
+                        <p>Letter Type</p>
+                    </li>
+                    <li class="step">
+                        <span>2</span>
+                        <p>Applicant's Details</p>
+                    </li>
+                    <li class="step">
+                        <span>3</span>
+                        <p>Supervisor's Field</p>
+                    </li>
+                </ul>
+            </div>
+            <form action="/generate.pdf" method="POST">
+                <div class="form-one form-step active">
+                    <h2>Letter Type</h2>
+                <label for="name">Name:</label>
+                <input type="text" name="name" required>
+           </form>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Class Ordinary</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="first-class--ordinary">
+    <div class="letter-head">
+        <div class="supervisor-name">
+            <h2>Dr. Emmanuel Kwesi Arthur</h2>
+        </div>
+        <div class="qualification">
+            <h5>Senior Lecturer and Laboratory Manager, Department of Materials Engineering</h5>
+        </div>
+        <div class="knust-in-full">
+            <h5>Kwame Nkrumah University of Science and Technology, Kumasi, Ghana</h5>
+        </div>
+        <div class="email">
+            <h5>Email: ekarthur.coe@knust.edu.gh/ekarthur2005@yahoo.com</h5>
+        </div>
+        <img src="{{url_for('static', filename='img/knust-logo.png') }}" alt="knust logo" class="knust-logo">
+        <div class="receivers-address">
+            <address>
+                <p style="text-align: left;">
+                {{receiversAddress}}
+                </p>
+            </address>
+        </div>
+        <hr class="horizontal-line--1">
+        <hr class="horizontal-line--2">
+        <br>
+        <div class="reference" style="text-align: left;">
+            <p>Ref.: MSE/REC/2019/010</p>
+        </div>
+        <div class="letter-date" style="text-align: right;">
+            <p>Dated: <span  id="datetime"></span></p>
+        </div>
+    </div>
+    <p>Dear Sir/Madam,</p>
+    <div class="letter-header">Letter Of Recommendation: {{fullName}}</div>
+    <div class="letter-content">
+        <p>
+            I got to know {{fullName}} as a lecturer at the Kwame Nkrumah University of Science and Technology (KNUST), Kumasi-Ghana. I would rank {% if gender == "male" %} him {% elif gender == "female" %} her {% endif %} in the top {{rank}}% of students that I have taught in the past {{years}} years in respect of {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} understanding ability.
+        </p>
+        <p>
+            {{fullName}} is a highly intelligent student with research and good analytical abilities. {% if gender == "male" %} He {% elif gender == "female" %} She {% endif %} was an outstanding student who graduated in {{gradYear}} with {{progStudied}}, First class honor at KNUST. 
+        </p>
+        <p>
+            Since I got to know {{firstName}}, {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} has a common goal of applying what {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} has learnt in Engineering to other fields. Besides {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} academic knowledge, {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} has the following skills: pronounced sense of responsibility, a team player, adheres to strict orders, good communication skills, good analytical competences and {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} can work for long hours with little or no supervision.
+        </p>
+        <p>
+            {{fullName}} is unquestionable and an exceptional candidate for the {{progApplying}} at {{schoolApplying}}. I strongly recommend {% if gender == "male" %} him {% elif gender == "female" %} her {% endif %} for admission into the Graduate School program.  
+        </p>
+        <p>
+        {{comments}}
+        </p>
+        <p>
+            If I can be of any further assistance, please do not hesitate to contact me on (+233) 541710532 and ekarthur.coe@knust.edu.gh.
+        </p>
+        <p>Thank You</p>
+        <p>Yours faithfully,</p>
+        <img src="" alt="signature">
+        <p>Dr. Emmanuel Kwesi Arthur</p><br>
+        Senior Lecturer
+    </div>
+    <footer class="letter-footer">
+        Tel. +233 (0) 541710532
+    </footer>
+    <script>
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById("datetime");
+            const currentDate = new Date();
+            const options = {year: 'numeric', month: 'long', day: 'numeric'}
+            const formattedDate = currentDate.toLocaleDateString('en-US', options);
+            datetimeElement.textContent = formattedDate;
+        }
+        window.onload = updateDateTime;
+    </script>
+</body>
+</html>
