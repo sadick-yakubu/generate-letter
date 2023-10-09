@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letter Generator</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
 </head>
 <body class="home">
     <nav>
@@ -42,7 +44,7 @@
     <form action="/generate_letter" method="POST">
             <div>
                 <label for="template">Letter For:</label>
-                <select name="template" required>
+                <select name="template" id="template" required>
                     <option disabled selected>Writing a letter for ... student.</option>
                     <option value="firstClassExcellent">First Class (excellent)</option>
                     <option value="firstClassOrdinary">First Class (ordinary)</option>
@@ -61,7 +63,7 @@
 
             <div>
                 <label for="lastName">Last Name:</label>
-                <input type="text" name="lastName" placeholder="Enter applicant's middle name" required>
+                <input type="text" name="lastName" placeholder="Enter applicant's last name" required>
             </div>
             <div>
                 <label for="fullName">Full Name:</label>
@@ -75,9 +77,17 @@
                     <option value="female">Female</option>
                 </select>
             </div>
-            <div>
+            <div id="rank">
                 <label for="rank">Student Rank:</label>
-                <input type="number" name="rank" placeholder="In what percentile would you rank the student?" required>
+                <input type="number" name="rank" placeholder="In what percentile would you rank the student?" id="rank" required>
+            </div>
+            <div id="projectTitle">
+                <label for="projectTitle">Project Title</label>
+                <input type="text" name="projectTitle" placeholder="What was the student's project title" id="projectTitle" class="textarea">
+            </div>
+            <div id="cwa">
+                <label for="cwa">Student CWA:</label>
+                <input type="text" name="cwa" placeholder="What is the student's CWA?" id="cwa" required>
             </div>
             <div>
                 <label for="years">Number of Years</label>
@@ -92,18 +102,20 @@
                 <input type="text" name="progStudied" placeholder="Which programme did the student study?">
             </div>
             <div>
-                <label for="progApplying">Programme/Scholarship Applying</label>
-                <input type="text" name="progApplying" placeholder="What programme or Scholarship is the student applying to?" required>
+                <label for="progApplying">Programme Applying</label>
+                <input type="text" name="progApplying" placeholder="What programme is the student applying to?" required>
             </div>
             <div>
                 <label for="schoolApplying">School Applying</label>
                 <input type="text" name="schoolApplying" placeholder="Which school is the student applying to?" required>
             </div>
             <div>
-                <textarea type="text" name="comments" placeholder="Add any additional comments to the letter"></textarea>
+                <label for="comments">Any Other Paragraph</label>
+                <input type="text" name="comments" placeholder="Add any additional comments to the letter" class="textarea">
             </div>
             <div>
-                <textarea type="text" name="receiversAddress" placeholder="What is the address of the receiver?"></textarea>
+                <label for="receiversAddress">Receiver Address</label>
+                <input type="text" name="receiversAddress" placeholder="What is the address of the receiving school?" class="textarea">
             </div>
             <button type="submit" class="btn-group btn-generate">Generate Letter</button>
         </form>

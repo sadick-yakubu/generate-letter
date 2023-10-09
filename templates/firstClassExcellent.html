@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Class Excellent</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="first-class--ordinary">
+    <div class="vl-1"></div>
+    <div class="vl-2"></div>
+    <div class="vl-3"></div>
+    <div class="letter-head">
+        <img src="{{url_for('static', filename='img/knust-logo.png') }}" alt="knust logo" class="knust-logo">
+        <div class="supervisor-name">
+            <h2>Dr. Emmanuel Kwesi Arthur</h2>
+        </div>
+        <div class="qualification">
+            <h5>Senior Lecturer and Laboratory Manager, Department of Materials Engineering</h5>
+        </div>
+        <div class="knust-in-full">
+            <h5>Kwame Nkrumah University of Science and Technology, Kumasi, Ghana</h5>
+        </div>
+        <div class="email">
+            <h5>Email: ekarthur.coe@knust.edu.gh / ekarthur2005@yahoo.com</h5>
+            <h5>Tel. +233 (0) 541710532</h5>
+        </div>
+        <div class="horizontal-line--1"></div>
+        <div class="horizontal-line--2"></div>
+    </div>
+    <div class="letter-body">
+        <span class="reference">Ref.: MSE/REC/{{letter_year}}</span>
+        <span class="letter-date">Dated: <span  id="datetime">{{letter_date}}</span></span>
+        <div class="receivers-address">
+            <p>{{receiversAddress | safe }}</p>
+        </div>
+        <p>Dear Sir/Madam,</p>
+        <p class="letter-intro">Letter Of Recommendation: {% if gender == "male" %} Mr. {% elif gender == "female" %} Miss {% endif %}{{fullName}}</p>
+        <div class="letter-content">
+            <p>
+                I write at the instance of {% if gender == "male" %} Mr. {% elif gender == "female" %} Miss {% endif %}{{fullName}} in connection with {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} graduate program application. I have known {{firstName}} for more than {{years}} years. I came to know {% if gender == "male" %} him {% elif gender == "female" %} her {% endif %} very well when {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} worked directly under me as my undergraduate project student in the Department of Materials Engineering at the Kwame Nkrumah University of Science and Technology (KNUST).
+            </p>
+            <p>
+                {% if gender == "male" %} Mr. {% elif gender == "female" %} Miss {% endif %} {{fullName}} whose final year project work was on <em>"{{projectTitle}}"</em>, exhibited selfless dedication, great understanding and in-depth commitment towards the success of {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} project work. I served as a member of the panel that assessed {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} undergraduate project defense during which {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} delivered expressively. As {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} Lecturer, I found {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} energy and commitment towards her academics commendable. {{firstName}}'s character, overall intellect and ability to learn are qualities that will serve {% if gender == "male" %} him {% elif gender == "female" %} her {% endif %} well in graduate studies. {% if gender == "male" %} He {% elif gender == "female" %} She {% endif %} graduated with an enviable First Class Honours with a Cumulative Weighted Average of {{cwa}}. As a result of {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} admirable academic performance, {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} has been retained as a Teaching/Research Assistant for the 2022/2023 academic year. 
+            </p>
+            <p>
+                {{firstName}} was very committed to {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} studies, demonstrating great understanding of the program and helping {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} course mates too. Based on academic ability, experience and commitment to further studies, I am optimistic the applicant has the ability to pursue the program {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} has applied for. I have high hopes and expectations for {% if gender == "male" %} him {% elif gender == "female" %} her {% endif %} as {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} is academically good and has great potential. It is rare to come across academically ambitious {% if gender == "male" %} students {% elif gender == "female" %} female students {% endif %} like {% if gender == "male" %} him {% elif gender == "female" %} her {% endif %} in Ghana so when I meet people of {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} kind, I take it upon myself to ensure their potential is fully realized.
+            </p>
+            <p>
+                {{comments}}
+            </p>
+            <p>
+                I strongly recommend {{fullName}} for admission into the {{progApplying}} and any educational assistance {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} may apply for without any reservations. 
+            </p>
+            <p>Thank You</p>
+            <p>Yours faithfully,</p>
+            <img src="{{url_for('static', filename='img/signature.png') }}" alt="signature" class="signature">
+            <div>Dr. Emmanuel Kwesi Arthur</div>
+            Senior Lecturer
+        </div>
+    </div>
+    <script>
+       function updateDateTime() {
+        var datetimeElement = document.getElementById("datetime");
+        var currentDate = new Date();
+        var options = { year: 'numeric', month: 'long', day: 'numeric'};
+        var formattedDate = currentDate.toLocaleDateString('en-US', options);
+        datetimeElement.textContent = formattedDate;
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

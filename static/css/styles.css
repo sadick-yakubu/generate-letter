@@ -1,8 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif
+}
+html{
+  font-size: 62.5%;
+}
+/***** CLEARFIX *****/
+.clearfix{
+  zoom: 1;
+}
+.clearfix:after{
+  content: "";
+  display: table;
+  clear: both;
+  visibility: hidden;
+}
+.home {
+  font-size: 1rem;
 }
 .home-container{
     position: block;
@@ -13,6 +31,99 @@
     margin: auto;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.first-class--ordinary{
+  margin-left: auto;
+  margin-right: auto;
+  height: 980px;
+  width: 595px;
+}
+.letter-head{
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  opacity: 0.6;
+}
+.letter-head .supervisor-name{
+  display: inline-block;
+  font-family: 'Comic Neue', cursive;
+  margin-left: 2rem;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+.letter-head .knust-logo{
+  width: 6rem;
+  float: left;
+}
+.letter-head .qualification,
+.letter-head .knust-in-full,
+.letter-head .email{
+  display: inline-block;
+  font-family: 'Comic Neue', cursive;
+  line-height: 1.5rem;
+  margin-left: 2rem;
+  font-size: 1.4rem;
+}
+.letter-head .horizontal-line--1,
+.letter-head .horizontal-line--2{
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  border: 0;
+  border-top: 1.25px solid red;
+}
+.letter-head .horizontal-line--1{
+  border-color: #801C14;
+}
+.vl-1{
+  border-left: 0.8px solid red;
+  height: 97rem;
+  margin-right: 0.2rem;
+  float: left;
+}
+.vl-2{
+  border-left: 0.8px solid red;
+  height: 97rem;
+  margin-right: 0.2rem;
+  float: left;
+}
+.vl-3{
+  border-left: 0.8px solid red;
+  height: 97rem;
+  margin-right: 0.5rem;
+  float: left;
+}
+.letter-body{
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.reference{
+  margin-top: -1rem;
+  margin-right: 30rem;
+}
+.letter-date{
+
+  margin-top: -1rem;
+}
+.receivers-address{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.letter-intro{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.letter-content{
+  text-align: justify;
+  font-family: 'Times New Roman';
+}
+.letter-content p{
+  margin-bottom: 1rem;
+}
+.signature{
+  width: 10rem;
 }
 .form-box {
     display: flex;
@@ -39,34 +150,34 @@ form > div {
 }
 form input, select {
     outline-color: #23068f;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 400;
     color: #333;
     border-radius: .5rem;
     border: 0.1rem solid #3907f1;
     padding: 0 1rem;
-    height: 3rem;
-    width: 20rem;
+    height: 3.5rem;
+    width: 25rem;
     margin: 8px 0; 
 }
-form textarea{
+form .textarea{
     outline-color: #23068f;
     border-radius: .5rem;
     border: 0.1rem solid #3907f1;
     padding: 0.5rem 0.5rem;
-    width:  18rem;
-    height: 10rem;
+    width:  25rem;
+    height: 12rem;
     margin: 8px 0; 
 }
 form input:focus,
 form select:focus {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
 }
-  form label {
-    font-size: 1rem;
-    margin-bottom: .3rem;
-    font-weight: 550;
-    color: #2e2e2e;
+form label {
+  font-size: 1.4rem;
+  margin-bottom: .3rem;
+  font-weight: 550;
+  color: #2e2e2e;
 }
 select,
 input[type="date"] {

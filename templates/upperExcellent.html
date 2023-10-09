@@ -3,15 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Class Ordinary</title>
+    <title>Second Class Upper Excellent</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css') }}">
-    <style>
-        footer{
-        margin-top: 20rem;
-        opacity: 0.6;
-        margin-left: 1.5rem;
-    }
-    </style>
 </head>
 <body class="first-class--ordinary">
     <div class="vl-1"></div>
@@ -30,6 +23,7 @@
         </div>
         <div class="email">
             <h5>Email: ekarthur.coe@knust.edu.gh / ekarthur2005@yahoo.com</h5>
+            <h5>Tel. +233 (0) 541710532</h5>
         </div>
         <div class="horizontal-line--1"></div>
         <div class="horizontal-line--2"></div>
@@ -44,23 +38,18 @@
         <p class="letter-intro">Letter Of Recommendation: {% if gender == "male" %} Mr. {% elif gender == "female" %} Miss {% endif %}{{fullName}}</p>
         <div class="letter-content">
             <p>
-                I got to know {{fullName}} as a lecturer at the Kwame Nkrumah University of Science and Technology (KNUST), Kumasi-Ghana. I would rank {% if gender == "male" %} him {% elif gender == "female" %} her {% endif %} in the top {{rank}}% of students that I have taught in the past {{years}} years in respect of {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} understanding ability.
+                I write to recommend {% if gender == "male" %} Mr. {% elif gender == "female" %} Miss {% endif %} {{fullName}} for graduate admission into your institution. I have known {{firstName}} for {{years}} years during which I have served as {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} lecturer and academic advisor at the Kwame Nkrumah University of Science and Technology (KNUST).
             </p>
             <p>
-                {{fullName}} is a highly intelligent student with research and good analytical abilities. {% if gender == "male" %} He {% elif gender == "female" %} She {% endif %} was an outstanding student who graduated in {{gradYear}} with {{progStudied}}, First class honor at KNUST. 
+                Over the years, I have witnessed {{firstName}}'s remarkable progressive academic and personal growth.  {{firstName}} is well known in the Department of Materials Engineering at KNUST for his academic performance, commitment, hard work, and exceptional understanding of the programme and ability to apply theoretical knowledge. {{firstName}} graduated from the department with a second-class honor, upper division. He has good interpersonal skills and he is a team player; in most cases, he has proven himself to be an exceptional leader: he never fails to step up to any challenge. As such, his final year project group work on
+                <em>"{{projectTitle}}"</em>, was rated one of the best projects submitted to the department in the 2020/2021 academic year.
             </p>
             <p>
-                Since I got to know {{firstName}}, {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} has a common goal of applying what {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} has learnt in Engineering to other fields. Besides {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} academic knowledge, {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} has the following skills: pronounced sense of responsibility, a team player, adheres to strict orders, good communication skills, good analytical competences and {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} can work for long hours with little or no supervision.
+                {{comments}}
             </p>
             <p>
-                {{fullName}} is unquestionable and an exceptional candidate for the {{progApplying}} at {{schoolApplying}}. I strongly recommend {% if gender == "male" %} him {% elif gender == "female" %} her {% endif %} for admission into the Graduate School program.  
+                {{firstName}} is an exceptional candidate for graduate study and I would undoubtedly recommend him for admission into the {{progApplying}} at {{schoolApplying}}. I am confident he would make an excellent addition to the university community. Please contact me for any further information whenever the need be. 
             </p>
-            <p>
-            {{comments}}
-            </p>
-            <p>
-                If I can be of any further assistance, please do not hesitate to contact me on (+233) 541710532 and ekarthur.coe@knust.edu.gh.
-            </p><br>
             <p>Thank You</p>
             <p>Yours faithfully,</p>
             <img src="{{url_for('static', filename='img/signature.png') }}" alt="signature" class="signature">
@@ -68,9 +57,6 @@
             Senior Lecturer
         </div>
     </div>
-    <footer class="letter-footer">
-        Tel. +233 (0) 541710532
-    </footer>
     <script>
        function updateDateTime() {
         var datetimeElement = document.getElementById("datetime");
