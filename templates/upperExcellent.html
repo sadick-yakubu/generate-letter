@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Second Class Upper Excellent</title>
+    <title>Second Class Upper TA</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css') }}">
 </head>
 <body class="first-class--ordinary">
@@ -38,17 +38,20 @@
         <p class="letter-intro">Letter Of Recommendation: {% if gender == "male" %} Mr. {% elif gender == "female" %} Miss {% endif %}{{fullName}}</p>
         <div class="letter-content">
             <p>
-                I write to recommend {% if gender == "male" %} Mr. {% elif gender == "female" %} Miss {% endif %} {{fullName}} for graduate admission into your institution. I have known {{firstName}} for {{years}} years during which I have served as {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} lecturer and academic advisor at the Kwame Nkrumah University of Science and Technology (KNUST).
+                I write to recommend {% if gender == "male" %} Mr. {% elif gender == "female" %} Miss {% endif %} {{fullName}} for graduate admission into your institution. I have known {{firstName}} for {{years}} years during which I have served as {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} {{position}} at the Kwame Nkrumah University of Science and Technology (KNUST).
             </p>
             <p>
-                Over the years, I have witnessed {{firstName}}'s remarkable progressive academic and personal growth.  {{firstName}} is well known in the Department of Materials Engineering at KNUST for his academic performance, commitment, hard work, and exceptional understanding of the programme and ability to apply theoretical knowledge. {{firstName}} graduated from the department with a second-class honor, upper division. He has good interpersonal skills and he is a team player; in most cases, he has proven himself to be an exceptional leader: he never fails to step up to any challenge. As such, his final year project group work on
-                <em>"{{projectTitle}}"</em>, was rated one of the best projects submitted to the department in the 2020/2021 academic year.
+                Over the years, I have witnessed {{firstName}}'s remarkable progressive academic and personal growth.  {{firstName}} is well known in the Department of Materials Engineering at KNUST for his academic performance, commitment, hard work, and exceptional understanding of the programme and ability to apply theoretical knowledge. {{firstName}} graduated from the department with a second-class honor, upper division. {% if gender == "male" %} He {% elif gender == "female" %} She {% endif %} has good interpersonal skills and {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} is a team player in most cases, {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} has proven {% if gender == "male" %} himself {% elif gender == "female" %} herself {% endif %} to be an exceptional leader: {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} never fails to step up to any challenge. As such, {% if gender == "male" %} his {% elif gender == "female" %} her {% endif %} final year project group work on
+                <em>"{{projectTitle}}"</em>, was rated one of the best projects submitted to the department in the {{gradYear}}/{{acaYear}} academic year.
+            </p>
+            <p>
+                As a Teaching/Research assistant in the Department of Materials Engineering for the {{gradYear}}/{{acaYear}} academic year, {{firstName}} has proven to be hardworking and committed to the work. 
             </p>
             <p>
                 {{comments}}
             </p>
             <p>
-                {{firstName}} is an exceptional candidate for graduate study and I would undoubtedly recommend him for admission into the {{progApplying}} at {{schoolApplying}}. I am confident he would make an excellent addition to the university community. Please contact me for any further information whenever the need be. 
+                {{firstName}} is an exceptional candidate for graduate study and I would undoubtedly recommend {% if gender == "male" %} him {% elif gender == "female" %} her {% endif %} for admission into the {{progApplying}} at {{schoolApplying}}. I am confident {% if gender == "male" %} he {% elif gender == "female" %} she {% endif %} would make an excellent addition to the university community. Please contact me for any further information whenever the need be. 
             </p>
             <p>Thank You</p>
             <p>Yours faithfully,</p>

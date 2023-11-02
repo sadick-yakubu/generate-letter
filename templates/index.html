@@ -48,7 +48,7 @@
                     <option disabled selected>Writing a letter for ... student.</option>
                     <option value="firstClassExcellent">First Class (excellent)</option>
                     <option value="firstClassOrdinary">First Class (ordinary)</option>
-                    <option value="upperExcellent">Second Class Upper (excellent)</option>
+                    <option value="upperExcellent">Second Class Upper (TA)</option>
                     <option value="upperOrdinary">Second Class Upper (ordinary)</option>
                     <option value="upperForSupport">Second Class Upper (for support)</option>
                     <option value="lower">Second Class Lower (ordinary)</option>
@@ -79,9 +79,12 @@
             </div>
             <div id="rank">
                 <label for="rank">Student Rank:</label>
-                <input type="number" name="rank" placeholder="In what percentile would you rank the student?" id="rank" required>
+                <input type="text" name="rank" placeholder="In what percentile would you rank the student?" id="rank" required>
             </div>
-            <div id="projectTitle">
+            <div id="position">
+                <label for="position">Position</label>
+                <input type="text" name="position" placeholder="Eg. lecturer, academic advisor, project supervisor..." id="position">
+            </div><div id="projectTitle">
                 <label for="projectTitle">Project Title</label>
                 <input type="text" name="projectTitle" placeholder="What was the student's project title" id="projectTitle" class="textarea">
             </div>
@@ -95,7 +98,7 @@
             </div>
             <div>
                 <label for="gradYear">Year Graduated</label>
-                <input type="number" name="gradYear" placeholder="Which year did the student graduate?" required>
+                <input type="text" name="gradYear" placeholder="Which year did the student graduate?" required>
             </div>
             <div>
                 <label for="progStudied">Programme Studied</label>

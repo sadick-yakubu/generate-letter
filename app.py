@@ -4,21 +4,31 @@ from jinja2 import Template
 from datetime import datetime
 
 app = Flask(__name__)
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/firstClassOrdinary')
 def firstClassOrdinary():
     return render_template('firstClassOrdinary.html')
 
+
 @app.route('/firstClassExcellent')
 def firstClassExcellent():
     return render_template('firstClassExcellent.html')
 
+
 @app.route('/upperExcellent')
 def upperExcellent():
     return render_template('upperExcellent.html')
+
+@app.route('/upperOrdinary')
+def upperOrdinary():
+    return render_template('upperOrdinary.html')
+
 
 @app.route('/generate_letter', methods=['POST'])
 def generate_letter():
@@ -29,6 +39,7 @@ def generate_letter():
     fullName = request.form['fullName']
     gender = request.form['gender']
     rank = request.form['rank']
+    position = request.form['position']
     projectTitle = request.form['projectTitle']
     cwa = request.form['cwa']
     years = request.form['years']
@@ -38,19 +49,18 @@ def generate_letter():
     schoolApplying = request.form['schoolApplying']
     comments = request.form['comments']
     receiversAddress = request.form['receiversAddress']
-    receiversAddress=receiversAddress.replace('\n', ' <br> ')
+    receiversAddress = receiversAddress.replace('\n', ' <br> ')
+    acaYear = int (gradYear) + 1
 
     # Get the current date
     letter_date = datetime.now().strftime('%B %d, %Y')
-    letter_year = datetime.now().strftime('%Y')
-    
+    letter_year = datetime.now().strftime('%Y')    
     # Load selected template
     template_filename = f"{selected_template}.html"
     with open(os.path.join("templates", template_filename), 'r') as template_file:
         letter_content = template_file.read()
     # Render the selected template with user data
-    rendered_template = render_template_string(letter_content, fullName=fullName, firstName=firstName, lastName=lastName, gender= gender, rank=rank, years=years, gradYear=gradYear, progStudied=progStudied, progApplying=progApplying, schoolApplying=schoolApplying, comments=comments, receiversAddress=receiversAddress, letter_date=letter_date, letter_year=letter_year, projectTitle=projectTitle, cwa=cwa)
-
+    rendered_template = render_template_string(letter_content, fullName=fullName, firstName=firstName, lastName=lastName, gender= gender, rank=rank, years=years, position=position, gradYear=gradYear, progStudied=progStudied, progApplying=progApplying, schoolApplying=schoolApplying, comments=comments, receiversAddress=receiversAddress, letter_date=letter_date, letter_year=letter_year, projectTitle=projectTitle, cwa=cwa, acaYear=acaYear)
     # Generate PDF using WeasyPrint library
     from weasyprint import HTML
     from flask_weasyprint import HTML
@@ -64,3 +74,4 @@ def generate_letter():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
