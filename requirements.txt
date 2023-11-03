@@ -22,4 +22,4 @@ tinycss2==1.2.1
 weasyprint==60.1
 webencodings==0.5.1
 Werkzeug==2.2.3
-zopfli==0.2.3
+zopfli==0.2.2
