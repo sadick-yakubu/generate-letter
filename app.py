@@ -54,7 +54,7 @@ def generate_letter():
 
     # Get the current date
     letter_date = datetime.now().strftime('%B %d, %Y')
-    letter_year = datetime.now().strftime('%Y')    
+    letter_year = datetime.now().strftime('%Y')
     # Load selected template
     template_filename = f"{selected_template}.html"
     with open(os.path.join("templates", template_filename), 'r') as template_file:
