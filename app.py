@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, render_template_string, make_response, url_for, request
 from jinja2 import Template
 from datetime import datetime
+import webbrowser
 
 app = Flask(__name__)
 
@@ -73,5 +74,6 @@ def generate_letter():
     return response
 
 if __name__ == '__main__':
+    webbrowser.open('http://127.0.0.1:5000')
     app.run(debug=True)
 
